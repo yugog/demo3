@@ -179,8 +179,8 @@ body,html{width: 100%;height: 100%;}
 
             @media screen and (max-width: 1160px) {
     .advert { width:100%; }  
-    .mid{ width:80%; height:3000px;margin:0px auto;}  
-    .mid>div{width:100%; margin: 120px 0px;}
+    .mid{ width:80%; height:2500px;margin:0px auto;}  
+    .mid>div{width:100%; margin: 80px 0px;}
     .mid div:nth-of-type(2),.mid div:nth-of-type(5){margin-left:0px;margin-right:0px;}
     .mid div:nth-of-type(1){margin-top:0px;}
     body>h2{ width:80%; height:40px;margin:0px auto;} 
@@ -192,6 +192,16 @@ body,html{width: 100%;height: 100%;}
     .top{width: 80px; margin: 0px auto;left: 0px;}
     .top span{}
     .top ul{display: none;}
+    .bottom{
+      bottom: 70px;
+    }
+    .bottomtext,.biaodan,.email{
+        display: block;
+    }
+    .biaodan img{
+        width: 12px;
+        height: 12px;
+    }
 }  
     
 h2{
@@ -252,12 +262,13 @@ h2{
                 width:100%;
                 height: 42vw;
                 background: rgba(0,0,0,0.1);
-                margin: 0px auto;
+                margin: 80px auto;
                 margin-bottom: 80px;
             }
             .advert2 img{width: 100%;height: 100%;}
 
 .bottom{
+    /*bottom: 70px;*/
 	width: 92%;
 	height: 140px;
 	/*background: rgba(0,0,0,0.1);*/
@@ -301,9 +312,9 @@ vertical-align:top;
 .biaodan img{
    width: 27px;
    height:26.5px; 
-   position: relative;
-   right: 1px;
-   top: -0.5px;
+   position: absolute;
+   right: -27px;
+   top: 0px;
 }
 .email{
 	width: 340px;
