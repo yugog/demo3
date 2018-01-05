@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src='js/jquery-1.11.1.min.js'></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="css1.css">
+     <script>
+	$(function(){
+
+		// 淡入轮播
+        var index=0;
+        var imgnum=$('.advert ul li').length;
+        var nmun='';
+        $('.advert').hover(function(){ clearInterval(p);}
+                                     ,function(){ pic();}
+        	               );
+
+        function pic(){
+        	p=setInterval(function(){
+        		index++;
+        		if (index>=imgnum) {index=0;}
+        		selectimg(index);
+        	},3000);
+         }
+
+         function selectimg(index){
+         	$('.advert ul li').eq(index).fadeIn().siblings().fadeOut();
+         	$('.advert div').eq(index).addClass('cur').siblings().removeClass('cur')
+         };
+         pic();
+
+$('.advert>div').click(function() {
+
+                var index=$(this).index();
+                  
+                $('.advert ul li').eq(index).fadeIn().siblings().fadeOut();
+               
+
+              $('.advert>div').eq(index).addClass('cur').siblings().removeClass('cur');
+             
+      }); 
+
+
+// 显示轮播
+      //       var num=0;
+      //       var timee;
+      //       function zou(){
+      //         timee=setInterval(function(){
+      //         num=num+1;if(num>2){num=0;}
+      //       $('.advert ul').css('top', -45*num+'vw').fadeIn("500");
+      //        $('.advert>div').eq(num).addClass('cur').siblings('').removeClass('cur');
+      //   },1000);}
+      //       zou();
+      //       $('.advert').hover(function() {
+      //       	clearInterval(timee);} , function() {zou();}   );
+
+      //      $('.advert>div').click(function() {
+
+      //           var index=$(this).index();
+                  
+      //           $('.advert ul').css('top', -45*index+'vw')
+               
+
+      //         $('.advert>div').eq(index).addClass('cur').siblings().removeClass('cur');
+             
+      // }); 
+
+                $(window).scroll(function(event) {
+                    var wt=$(window).scrollTop();
+                    var wh=$(window).height();
+                    // 当前窗口的高度。
+                    if(wt>wh){
+                        $('#dd').fadeIn();
+                    }else{
+                        $('#dd').fadeOut();
+                    }
+                });
+                $('#dd').click(function(event) {
+                    $('html,body').animate({'scrollTop': '0px'}, 500)
+                });
+
+
+
+	})
+</script>
+        <style>
+ #dd{
+                position: fixed;
+                right: 10px;
+                bottom: 10px;
+                border: 1px solid #000;
+                width: 80px;
+                line-height: 40px;
+                text-align: center;
+                cursor: pointer;
+                /*光标变手*/
+                display: none;
+                background: rgba(255,255,255,0.5);
+                z-index: 10;
+            }
+  
+        </style>
+    </head>
+    <body>
+    <span id="dd">
+    返回顶部
+    </span>
+    <div class="top">
+        <span><img src="yu.jpg" alt=""></span>
+        <ul>
+            <li><p>HOME</p></li>
+            <li><p>SCHOOL</p><div><a href="">广东财经大学</a>
+                                    <a href="">电子商务专业</a>
+                                    <a href="">大三生</a></div></li>
+            <li><p>SKILL</p><div><a href="">photoshop</a>
+                                    <a href="">final cut pro</a>
+                                    <a href="">office</a></div></li>
+            <li><p>CONTACT</p><div><a href="">Tel&nbsp;&nbsp;&nbsp;：188***4647</a>
+                                    <a href="">Wx&nbsp;&nbsp;：188***4647</a>
+                                    <a href="" style="font-size: 11px;">Email：694514739@qq.com</a></div></li>
+        </ul>
+    </div>
+
+    <div class="advert">
+        <div class="cur"></div>
+        <div></div>
+        <div></div>
+        <ul>
+        	<li><img src="man1.jpg" alt=""></li>
+        	<li><img src="san2.jpg" alt=""></li>
+        	<li><img src="san11.jpg" alt=""></li>
+        </ul>
+
+    </div>
+    <div class="mid">
+            <div><p><b>YUGONG</b> <br>We make carryalls for professionals and hobbyists.
+Here are our product series:</p></div>
+            <div><a href=""><b>shop one</b></a></div>
+            <div><a href=""><b>shop two</b></a></div>
+            <div><a href=""><b>shop three</b></a></div>
+            <div><a href=""><b>shop four</b></a></div>
+            <div><a href=""><b>shop all products</b></a></div>
+        </div>
+    <h2><p>TEXT COM</p></h2> 
+    <div class="mid2">
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+        </div>
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+          </div>
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+          </div>
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+          </div>
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+          </div>
+        <div>
+          <div class="img1"></div>
+          <div class="mid2text"><a href=""><span>TEXT</span><br><br><span>text</span></a></div>
+          </div>
+    </div>
+
+<div class="advert2">
+        <img src="jan.jpg" alt="">
+    </div>
+
+<div class="bottom">
+	<ul class="bottomtext">
+		<li><a href="">SHIPPING &amp; RETURNS</a>   </li>
+		<li><a href="">PRIVACY POLICY</a>     </li>
+		<li><a href="">TERMS OF SERVICE</a></li>
+	</ul>
+	<div class="biaodan"><input type="text" style="" placeholder="&nbsp;&nbsp;&nbsp;Search here"><a href=""><img src="sou.png" alt=""></a>
+	</div>
+    <div class="email">
+    	<div><input type="text" style="" placeholder="&nbsp;Enter email here to join our community and receive promotions!"></div>
+    	<div><span>cilck</span></div>
+    </div>
+
+</div>
+<div class="imformation">Copyright ©2017 yugong All Rights Reserved</div>
+
+
+
+
+</body>
+</html>
